@@ -1,11 +1,14 @@
 import React from 'react';
 import EditableTimer from './EditableTimer';
 
-const EditableTimerList = () => {
+const EditableTimerList = (props) => {
+
+    const timers = props.timers.map(timer => <EditableTimer {...timer} />);
 
     return (
         <div id='timers'>
-            <EditableTimer
+            {timers}
+            {/* <EditableTimer
                 title='Lear React'
                 project='Web Domination'
                 elapsed='8986300'
@@ -18,7 +21,7 @@ const EditableTimerList = () => {
                 elapsed='3890985'
                 runningSince={null}
                 editFormOpen={true}
-            />
+            /> */}
         </div>
     )
 };
